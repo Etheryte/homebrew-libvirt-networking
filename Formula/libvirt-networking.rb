@@ -45,8 +45,6 @@ class Libvirt < Formula
         system "meson", "install"
       end
     end
-
-    shell_output("#{bin}/virsh -V")
   
     plist_options manual: "libvirtd"
   
