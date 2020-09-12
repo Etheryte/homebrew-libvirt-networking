@@ -75,14 +75,4 @@ class LibvirtNetworking < Formula
         </plist>
       EOS
     end
-  
-    test do
-      if build.head?
-        output = shell_output("#{bin}/virsh -V")
-        assert_match "Compiled with support for:", output
-      else
-        output = shell_output("#{bin}/virsh -v")
-        assert_match version.to_s, output
-      end
-    end
   end
