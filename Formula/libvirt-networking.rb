@@ -27,7 +27,7 @@ class LibvirtNetworking < Formula
     depends_on "libiscsi"
     depends_on "libssh2"
     depends_on "yajl"
-  
+
     def install
       mkdir "build" do
         args = %W[
@@ -38,6 +38,7 @@ class LibvirtNetworking < Formula
           -Ddriver_qemu=enabled
           -Ddriver_libvirtd=enabled
           -Ddriver_network=enabled
+          -Dauto_features=enabled
           -Dinit_script=none
         ]
         system "meson", *std_meson_args, *args, ".."
