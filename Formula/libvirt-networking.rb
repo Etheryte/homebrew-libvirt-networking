@@ -1,5 +1,5 @@
 class Libvirt < Formula
-    desc "C virtualization API"
+    desc "C virtualization API fork"
     homepage "https://www.libvirt.org"
     url "https://libvirt.org/sources/libvirt-6.7.0.tar.xz"
     sha256 "655b9476c797cdd3bb12e2520acc37335e5299b2d56a5bb9ab3f55db40161342"
@@ -9,13 +9,7 @@ class Libvirt < Formula
       url "https://libvirt.org/sources/"
       regex(/href=.*?libvirt[._-]v?([\d.]+)\.t/i)
     end
-  
-    bottle do
-      sha256 "4663b7bd349c9ef7ca8893a4e8b39032f0778957d2a4c452a85d875c51480b27" => :catalina
-      sha256 "4bbf546eed48b2d066e94c4a7b43c6ca12abb35748e33308a72f8d461a08f106" => :mojave
-      sha256 "12288e6ed862ab0d0424cac465ef705a82b7ed103f33412ee3d3c86a7966639b" => :high_sierra
-    end
-  
+
     head do
       url "https://github.com/libvirt/libvirt.git"
     end
@@ -51,6 +45,8 @@ class Libvirt < Formula
         system "meson", "install"
       end
     end
+
+    shell_output("#{bin}/virsh -V")
   
     plist_options manual: "libvirtd"
   
