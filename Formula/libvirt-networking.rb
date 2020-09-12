@@ -1,4 +1,4 @@
-class Libvirt < Formula
+class LibvirtNetworking < Formula
     desc "C virtualization API fork"
     homepage "https://www.libvirt.org"
     url "https://libvirt.org/sources/libvirt-6.7.0.tar.xz"
